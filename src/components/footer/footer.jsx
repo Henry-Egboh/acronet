@@ -17,9 +17,9 @@ const TopFooter = styled.section({
   }
 });
 
-const MidFooter = styled.section({});
+// const MidFooter = styled.section({});
 
-const BaseFooter = styled.section({});
+// const BaseFooter = styled.section({});
 
 // style menubar links
 const MenuLink = styled(Link)`

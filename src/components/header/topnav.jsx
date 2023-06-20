@@ -77,7 +77,7 @@ const MenuLink = styled(Link)`
 const MenuLinkWrapperColumn = styled.main`
   display: none;
   transform: translate(-100%);
-  transition: transform 2000ms ease-in-out 200ms ease-in;
+  transition: all 2000ms ease-in-out 200ms ease-in;
 
   @media screen and (max-width: 48rem) {
     display: flex;
@@ -99,53 +99,92 @@ const MenuLinkWrapperColumn = styled.main`
   }
 `;
 
-// const menu = [
-//     {
-//         icon: FaBars,
-//         link: 'phones',
-//     },
-//     {
-//         icon: FaBowlingBall,
-//         link: 'products',
-//     },
-//     {
-//         icon: FaArrowAltCircleDown,
-//         link: 'accessories',
-//     },
+// const logo = require('./logo.jpeg');
+// getImageSrc: () => require("../images/photo1.jpg");
 
-// ];
+// horizontal navbar
+const menu = [
+    {
+        id: 1,
+        icon: <FaPhoneSquare />,
+        link: 'phones',
+    },
+    {
+        id: 2,
+        icon: <FaBowlingBall />,
+        link: 'products',
+    },
+    {
+        id: 3,
+        icon: <FaArrowAltCircleDown />,
+        link: 'accessories',
+    },
+
+];
+
+// vertical nav bar
+const menuColumn = [
+  {
+      id: 1,
+      icon: FaPhoneSquare,
+      link: 'phones',
+  },
+  {
+      id: 2,
+      icon: FaBowlingBall,
+      link: 'products',
+  },
+  {
+      id: 3,
+      icon: FaArrowAltCircleDown,
+      link: 'accessories',
+  },
+  {
+    id: 1,
+    icon: FaPhoneSquare,
+    link: 'phones',
+},
+{
+    id: 2,
+    icon: FaBowlingBall,
+    link: 'products',
+},
+{
+    id: 3,
+    icon: FaArrowAltCircleDown,
+    link: 'accessories',
+},
+{
+  id: 1,
+  icon: FaPhoneSquare,
+  link: 'phones',
+},
+{
+  id: 2,
+  icon: FaBowlingBall,
+  link: 'products',
+},
+{
+  id: 3,
+  icon: FaArrowAltCircleDown,
+  link: 'accessories',
+},
+
+];
 
 // render when hamburger is clicked
 const NavColumn = () => {
   return (
     <MenuLinkWrapperColumn>
-      <MenuLink to="phones">
-        Phones 
-      </MenuLink>
-      <MenuLink to="products">
-        Products
-      </MenuLink>
-      <MenuLink to="accessories">
-        Accessories
-      </MenuLink>
-      <MenuLink to="phones">
-        Phones 
-      </MenuLink>
-      <MenuLink to="products">
-        Products
-      </MenuLink>
-      <MenuLink to="accessories">
-        Accessories
-      </MenuLink>
-      <MenuLink to="phones">
-        Phones 
-      </MenuLink>
-      <MenuLink to="products">
-        Products
-      </MenuLink>
-      <MenuLink to="accessories">
-        Accessories
-      </MenuLink>
+      {
+        menuColumn.map((menuCol) => (
+          <div key={menuCol.id}>
+            <MenuLink to={menuCol.link}>
+              {menuCol.link}
+            </MenuLink>
+          </div>
+        ))
+      }
     </MenuLinkWrapperColumn>
   );
 };
@@ -154,15 +193,18 @@ const NavColumn = () => {
 const NavRow = () => {
   return (
     <MenuLinkWrapper>
-      {/* {
-                    menu.map(({icon, link}) => (
-                        <MenuLink key={icon} to={link}> 
-                          {link}
-                        </MenuLink>
-                    ))
-                } */}
+      {
+        menu.map(({id, icon, link}) => (
+          <div key={id}>
+            <MenuLink className='alignNavList' to={link}>
+                <div>{link}</div>
+                {icon}
+            </MenuLink>
+          </div>
+        ))
+      }
 
-      <MenuLink to="phones">
+      {/* <MenuLink to="phones">
         Phones <FaPhoneSquare />
       </MenuLink>
       <MenuLink to="products">
@@ -171,7 +213,7 @@ const NavRow = () => {
       </MenuLink>
       <MenuLink to="accessories">
         Accessories <FaArrowAltCircleDown />
-      </MenuLink>
+      </MenuLink> */}
     </MenuLinkWrapper>
   );
 };
