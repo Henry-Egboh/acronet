@@ -1,16 +1,16 @@
 import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements} from 'react-router-dom';
-import RootLayout from './components/layout/rootLayout';
-import Products from './components/pages/products';
-import Accessories from './components/pages/accessories';
-import Phones from './components/pages/phones';
-import ErrorPage from './components/pages/errorPage';
-import Home from './components/pages/home';
+import RootLayout from './components/layout/RootLayout';
+import Products from './components/pages/Products';
+import Accessories from './components/pages/Accessories';
+import Phones from './components/pages/Phones';
+import ErrorPage from './components/pages/ErrorPage';
+import Home from './components/pages/Home';
 
 function App() {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<RootLayout />} errorElement={<ErrorPage />}>
-        <Route path='home' element={<Home />}/>
+        <Route path='/' element={<Home />}/>
         <Route path='products' element={<Products />} />
         <Route path='phones' element={<Phones />}/>
         <Route path='accessories' element={<Accessories />} />

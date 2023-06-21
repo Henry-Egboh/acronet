@@ -16,7 +16,7 @@ const MenuBar = styled.nav`
   padding: 1rem 2rem;
   // background-color: #e2e;
   background-color: hsla(234, 28%, 28%, 0.8);
-  z-index: 46;
+  z-index: 96;
   position: relative;
 
   h1 {
@@ -59,6 +59,7 @@ const MenuLink = styled(Link)`
   column-gap: 0.5rem;
   transform: scale(1);
   transition: transform 200ms ease-in-out;
+  text-transform: capitalize;
 
   &:hover {
     color: #fff;
@@ -77,7 +78,7 @@ const MenuLink = styled(Link)`
 const MenuLinkWrapperColumn = styled.main`
   display: none;
   transform: translate(-100%);
-  transition: all 2000ms ease-in-out 200ms ease-in;
+  transition: all 500ms ease-in-out;
 
   @media screen and (max-width: 48rem) {
     display: flex;
@@ -104,87 +105,91 @@ const MenuLinkWrapperColumn = styled.main`
 
 // horizontal navbar
 const menu = [
-    {
-        id: 1,
-        icon: <FaPhoneSquare />,
-        link: 'phones',
-    },
-    {
-        id: 2,
-        icon: <FaBowlingBall />,
-        link: 'products',
-    },
-    {
-        id: 3,
-        icon: <FaArrowAltCircleDown />,
-        link: 'accessories',
-    },
-
+  {
+    id: 1,
+    icon: <FaPhoneSquare />,
+    link: "phones",
+  },
+  {
+    id: 2,
+    icon: <FaBowlingBall />,
+    link: "products",
+  },
+  {
+    id: 3,
+    icon: <FaArrowAltCircleDown />,
+    link: "accessories",
+  },
+  {
+    id: 4,
+    icon: <FaArrowAltCircleDown />,
+    link: "Clothing",
+  },
+  {
+    id: 6,
+    icon: <FaArrowAltCircleDown />,
+    link: "Weather",
+  },
 ];
 
 // vertical nav bar
 const menuColumn = [
   {
-      id: 1,
-      icon: FaPhoneSquare,
-      link: 'phones',
-  },
-  {
-      id: 2,
-      icon: FaBowlingBall,
-      link: 'products',
-  },
-  {
-      id: 3,
-      icon: FaArrowAltCircleDown,
-      link: 'accessories',
-  },
-  {
     id: 1,
     icon: FaPhoneSquare,
-    link: 'phones',
-},
-{
+    link: "phones",
+  },
+  {
     id: 2,
     icon: FaBowlingBall,
-    link: 'products',
-},
-{
+    link: "products",
+  },
+  {
     id: 3,
     icon: FaArrowAltCircleDown,
-    link: 'accessories',
-},
-{
-  id: 1,
-  icon: FaPhoneSquare,
-  link: 'phones',
-},
-{
-  id: 2,
-  icon: FaBowlingBall,
-  link: 'products',
-},
-{
-  id: 3,
-  icon: FaArrowAltCircleDown,
-  link: 'accessories',
-},
-
+    link: "accessories",
+  },
+  {
+    id: 4,
+    icon: FaPhoneSquare,
+    link: "phones",
+  },
+  {
+    id: 5,
+    icon: FaBowlingBall,
+    link: "products",
+  },
+  {
+    id: 6,
+    icon: FaArrowAltCircleDown,
+    link: "accessories",
+  },
+  {
+    id: 7,
+    icon: FaPhoneSquare,
+    link: "phones",
+  },
+  {
+    id: 8,
+    icon: FaBowlingBall,
+    link: "products",
+  },
+  {
+    id: 9,
+    icon: FaArrowAltCircleDown,
+    link: "accessories",
+  },
 ];
 
 // render when hamburger is clicked
 const NavColumn = () => {
   return (
     <MenuLinkWrapperColumn>
-      {
-        menuColumn.map((menuCol) => (
-          <div key={menuCol.id}>
-            <MenuLink to={menuCol.link}>
-              {menuCol.link}
-            </MenuLink>
-          </div>
-        ))
-      }
+      {menuColumn.map((menuCol) => (
+        <div key={menuCol.id}>
+          <MenuLink to={menuCol.link}>{menuCol.link}</MenuLink>
+        </div>
+      ))}
     </MenuLinkWrapperColumn>
   );
 };
@@ -193,27 +198,14 @@ const NavColumn = () => {
 const NavRow = () => {
   return (
     <MenuLinkWrapper>
-      {
-        menu.map(({id, icon, link}) => (
-          <div key={id}>
-            <MenuLink className='alignNavList' to={link}>
-                <div>{link}</div>
-                {icon}
-            </MenuLink>
-          </div>
-        ))
-      }
-
-      {/* <MenuLink to="phones">
-        Phones <FaPhoneSquare />
-      </MenuLink>
-      <MenuLink to="products">
-        Products
-        <FaBowlingBall />
-      </MenuLink>
-      <MenuLink to="accessories">
-        Accessories <FaArrowAltCircleDown />
-      </MenuLink> */}
+      {menu.map(({ id, icon, link }) => (
+        <div key={id}>
+          <MenuLink className="alignNavList" to={link}>
+            <div>{link}</div>
+            {icon}
+          </MenuLink>
+        </div>
+      ))}
     </MenuLinkWrapper>
   );
 };
