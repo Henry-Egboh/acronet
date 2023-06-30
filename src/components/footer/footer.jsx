@@ -3,17 +3,22 @@ import { NavLink as Link } from "react-router-dom";
 
 const FooterContainer = styled.footer({
   backgroundColor: "hsla(234, 28%, 28%, 0.8)",
+  padding: "4rem 2rem",
 });
 
 const TopFooter = styled.section({
   display: "grid",
   gridTemplateColumns: "repeat(4, 1fr) 1.2fr",
-  padding: '0rem 2rem',
 
   h1: {
     color: '#edc',
     fontSize: '1.2rem',
-    fontWeight: '700',
+    fontWeight: '600',
+  },
+
+  p: {
+    fontSize: "1rem",
+    fontWeight: "300",
   }
 });
 
@@ -40,10 +45,6 @@ const MenuLink = styled(Link)`
   &.active {
     border-bottom: 1px solid #edc;
   }
-
-  //   @media screen and (max-width: 46rem) {
-  //     margin-left: auto;
-  //   }
 `;
 
 const Footer = () => {
@@ -54,44 +55,44 @@ const Footer = () => {
         <div>
           <h1>More Tools</h1>
           <div>
-            <MenuLink to="phones">Phones</MenuLink>
-            <MenuLink to="products">Products</MenuLink>
-            <MenuLink to="accessories">Accessories</MenuLink>
-            <MenuLink to="phones">Phones</MenuLink>
-            <MenuLink to="products">Products</MenuLink>
-            <MenuLink to="accessories">Accessories</MenuLink>
+            <MenuLink to="">Phones</MenuLink>
+            <MenuLink to="">Products</MenuLink>
+            <MenuLink to="">Accessories</MenuLink>
+            <MenuLink to="">Phones</MenuLink>
+            <MenuLink to="">Products</MenuLink>
+            <MenuLink to="">Accessories</MenuLink>
           </div>
         </div>
         {/* second */}
         <div>
           <h1>More Tools</h1>
           <div>
-            <MenuLink to="phones">Phones</MenuLink>
-            <MenuLink to="products">Products</MenuLink>
-            <MenuLink to="accessories">Accessories</MenuLink>
+            <MenuLink to="">Phones</MenuLink>
+            <MenuLink to="">Products</MenuLink>
+            <MenuLink to="">Accessories</MenuLink>
           </div>
         </div>
         {/* third  */}
         <div>
           <h1>More Tools</h1>
           <div>
-            <MenuLink to="phones">Phones</MenuLink>
-            <MenuLink to="products">Products</MenuLink>
-            <MenuLink to="accessories">Accessories</MenuLink>
-            <MenuLink to="phones">Phones</MenuLink>
-            <MenuLink to="products">Products</MenuLink>
-            <MenuLink to="accessories">Accessories</MenuLink>
-            <MenuLink to="accessories">Accessories</MenuLink>
+            <MenuLink to="">Phones</MenuLink>
+            <MenuLink to="">Products</MenuLink>
+            <MenuLink to="">Accessories</MenuLink>
+            <MenuLink to="">Phones</MenuLink>
+            <MenuLink to="">Products</MenuLink>
+            <MenuLink to="">Accessories</MenuLink>
+            <MenuLink to="">Accessories</MenuLink>
           </div>
         </div>
         {/* fourth column */}
         <div>
           <h1>More Tools</h1>
           <div>
-            <MenuLink to="phones">Phones</MenuLink>
-            <MenuLink to="products">Products</MenuLink>
-            <MenuLink to="accessories">Accessories</MenuLink>
-            <MenuLink to="phones">Phones</MenuLink>
+            <MenuLink to="">Phones</MenuLink>
+            <MenuLink to="">Products</MenuLink>
+            <MenuLink to="">Accessories</MenuLink>
+            <MenuLink to="">Phones</MenuLink>
           </div>
         </div>
         {/* social icons */}
