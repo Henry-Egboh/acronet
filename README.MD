@@ -2,4 +2,4 @@
 henry-egboh
 
 # Description
-Creating a responsive navbar using styled components
+A simple e-commerce web app
